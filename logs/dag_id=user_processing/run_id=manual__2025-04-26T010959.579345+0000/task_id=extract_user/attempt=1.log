@@ -1,0 +1,24 @@
+[2025-04-26T01:10:17.748+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-26T01:10:17.768+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: user_processing.extract_user manual__2025-04-26T01:09:59.579345+00:00 [queued]>
+[2025-04-26T01:10:17.780+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: user_processing.extract_user manual__2025-04-26T01:09:59.579345+00:00 [queued]>
+[2025-04-26T01:10:17.781+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2025-04-26T01:10:17.941+0000] {taskinstance.py:2890} INFO - Executing <Task(HttpOperator): extract_user> on 2025-04-26 01:09:59.579345+00:00
+[2025-04-26T01:10:17.949+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=2275) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-26T01:10:17.954+0000] {standard_task_runner.py:72} INFO - Started process 2277 to run task
+[2025-04-26T01:10:17.952+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'user_processing', 'extract_user', 'manual__2025-04-26T01:09:59.579345+00:00', '--job-id', '27', '--raw', '--subdir', 'DAGS_FOLDER/user_processing.py', '--cfg-path', '/tmp/tmpx84k6ti8']
+[2025-04-26T01:10:17.955+0000] {standard_task_runner.py:105} INFO - Job 27: Subtask extract_user
+[2025-04-26T01:10:18.019+0000] {task_command.py:467} INFO - Running <TaskInstance: user_processing.extract_user manual__2025-04-26T01:09:59.579345+00:00 [running]> on host bb0d27cab5a5
+[2025-04-26T01:10:18.106+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='user_processing' AIRFLOW_CTX_TASK_ID='extract_user' AIRFLOW_CTX_EXECUTION_DATE='2025-04-26T01:09:59.579345+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-26T01:09:59.579345+00:00'
+[2025-04-26T01:10:18.108+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-04-26T01:10:18.124+0000] {http.py:175} INFO - Calling HTTP method
+[2025-04-26T01:10:18.134+0000] {base.py:84} INFO - Retrieving connection 'user_api'
+[2025-04-26T01:10:18.142+0000] {base.py:84} INFO - Retrieving connection 'user_api'
+[2025-04-26T01:10:27.792+0000] {http.py:236} INFO - {"results":[{"gender":"male","name":{"title":"Mr","first":"Mustafa","last":"Bachmann"},"location":{"street":{"number":3598,"name":"Schützenstraße"},"city":"Heubach","state":"Schleswig-Holstein","country":"Germany","postcode":35063,"coordinates":{"latitude":"-49.9508","longitude":"-133.5922"},"timezone":{"offset":"+4:30","description":"Kabul"}},"email":"mustafa.bachmann@example.com","login":{"uuid":"b0a5e6e4-7ce8-4a2b-9eff-6871f8d108dd","username":"yellowwolf475","password":"trucker","salt":"BW3INkRM","md5":"78c3bba9ae4275c922982fa29eade279","sha1":"c6eb65e623ae0675a77b11b4028894453e12b2c7","sha256":"e88147d63f583bfd33e06ddd866a9fbf091487d08cfab9143e449e541e7be5c8"},"dob":{"date":"1973-11-23T12:22:50.939Z","age":51},"registered":{"date":"2011-10-24T12:53:26.193Z","age":13},"phone":"0958-1058821","cell":"0175-8959535","id":{"name":"SVNR","value":"12 231173 B 334"},"picture":{"large":"https://randomuser.me/api/portraits/men/8.jpg","medium":"https://randomuser.me/api/portraits/med/men/8.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/men/8.jpg"},"nat":"DE"}],"info":{"seed":"b70bc20926ef89a6","results":1,"page":1,"version":"1.4"}}
+[2025-04-26T01:10:27.838+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-04-26T01:10:27.839+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=user_processing, task_id=extract_user, run_id=manual__2025-04-26T01:09:59.579345+00:00, execution_date=20250426T010959, start_date=20250426T011017, end_date=20250426T011027
+[2025-04-26T01:10:27.905+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-26T01:10:27.953+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-04-26T01:10:27.957+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-04-26T01:10:27.957+0000] {standard_task_runner.py:217} INFO - Process not found (most likely exited), stop collecting metrics

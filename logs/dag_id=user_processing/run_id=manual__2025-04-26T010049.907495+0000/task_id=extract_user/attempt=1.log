@@ -1,0 +1,22 @@
+[2025-04-26T01:01:19.009+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-26T01:01:19.048+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: user_processing.extract_user manual__2025-04-26T01:00:49.907495+00:00 [queued]>
+[2025-04-26T01:01:19.071+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: user_processing.extract_user manual__2025-04-26T01:00:49.907495+00:00 [queued]>
+[2025-04-26T01:01:19.072+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2025-04-26T01:01:19.350+0000] {taskinstance.py:2890} INFO - Executing <Task(HttpOperator): extract_user> on 2025-04-26 01:00:49.907495+00:00
+[2025-04-26T01:01:19.359+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=2108) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-26T01:01:19.361+0000] {standard_task_runner.py:72} INFO - Started process 2111 to run task
+[2025-04-26T01:01:19.362+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'user_processing', 'extract_user', 'manual__2025-04-26T01:00:49.907495+00:00', '--job-id', '14', '--raw', '--subdir', 'DAGS_FOLDER/user_processing.py', '--cfg-path', '/tmp/tmpevhe0qha']
+[2025-04-26T01:01:19.365+0000] {standard_task_runner.py:105} INFO - Job 14: Subtask extract_user
+[2025-04-26T01:01:19.450+0000] {task_command.py:467} INFO - Running <TaskInstance: user_processing.extract_user manual__2025-04-26T01:00:49.907495+00:00 [running]> on host bb0d27cab5a5
+[2025-04-26T01:01:19.677+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='user_processing' AIRFLOW_CTX_TASK_ID='extract_user' AIRFLOW_CTX_EXECUTION_DATE='2025-04-26T01:00:49.907495+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-26T01:00:49.907495+00:00'
+[2025-04-26T01:01:19.679+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-04-26T01:01:19.694+0000] {http.py:175} INFO - Calling HTTP method
+[2025-04-26T01:01:19.706+0000] {base.py:84} INFO - Retrieving connection 'user_api'
+[2025-04-26T01:01:19.715+0000] {base.py:84} INFO - Retrieving connection 'user_api'
+[2025-04-26T01:01:40.121+0000] {http.py:236} INFO - {"results":[{"gender":"female","name":{"title":"Mrs","first":"Emily","last":"Gonzales"},"location":{"street":{"number":4420,"name":"Springfield Road"},"city":"Portsmouth","state":"Gwynedd County","country":"United Kingdom","postcode":"WG34 3ZQ","coordinates":{"latitude":"-12.6103","longitude":"143.2560"},"timezone":{"offset":"+9:30","description":"Adelaide, Darwin"}},"email":"emily.gonzales@example.com","login":{"uuid":"557e7ca7-6570-44f2-877f-2100100ac0bb","username":"yellowcat156","password":"irish1","salt":"tEcr0kVD","md5":"31f4dd86ee9eb2ae19affb52c42c8c67","sha1":"17d2667bce2834f483dbada37cfb7cfa28b5f6a8","sha256":"4133645d6163a73d834bf5de302f0c4bdc0e065e760f71ea8cf6731ce6ef9f80"},"dob":{"date":"1945-12-19T12:08:08.022Z","age":79},"registered":{"date":"2003-03-06T16:56:56.188Z","age":22},"phone":"01006 70776","cell":"07919 073259","id":{"name":"NINO","value":"KL 97 03 00 P"},"picture":{"large":"https://randomuser.me/api/portraits/women/11.jpg","medium":"https://randomuser.me/api/portraits/med/women/11.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/women/11.jpg"},"nat":"GB"}],"info":{"seed":"5ff0bdb2c268167d","results":1,"page":1,"version":"1.4"}}
+[2025-04-26T01:01:40.214+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-04-26T01:01:40.218+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=user_processing, task_id=extract_user, run_id=manual__2025-04-26T01:00:49.907495+00:00, execution_date=20250426T010049, start_date=20250426T010119, end_date=20250426T010140
+[2025-04-26T01:01:40.314+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-26T01:01:40.332+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

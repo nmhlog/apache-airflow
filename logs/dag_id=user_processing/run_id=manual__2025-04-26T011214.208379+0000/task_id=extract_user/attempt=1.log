@@ -1,0 +1,23 @@
+[2025-04-26T01:12:31.040+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-26T01:12:31.064+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: user_processing.extract_user manual__2025-04-26T01:12:14.208379+00:00 [queued]>
+[2025-04-26T01:12:31.078+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: user_processing.extract_user manual__2025-04-26T01:12:14.208379+00:00 [queued]>
+[2025-04-26T01:12:31.079+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2025-04-26T01:12:31.375+0000] {taskinstance.py:2890} INFO - Executing <Task(HttpOperator): extract_user> on 2025-04-26 01:12:14.208379+00:00
+[2025-04-26T01:12:31.397+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=2319) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-26T01:12:31.401+0000] {standard_task_runner.py:72} INFO - Started process 2321 to run task
+[2025-04-26T01:12:31.400+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'user_processing', 'extract_user', 'manual__2025-04-26T01:12:14.208379+00:00', '--job-id', '31', '--raw', '--subdir', 'DAGS_FOLDER/user_processing.py', '--cfg-path', '/tmp/tmp7stja2c3']
+[2025-04-26T01:12:31.405+0000] {standard_task_runner.py:105} INFO - Job 31: Subtask extract_user
+[2025-04-26T01:12:31.489+0000] {task_command.py:467} INFO - Running <TaskInstance: user_processing.extract_user manual__2025-04-26T01:12:14.208379+00:00 [running]> on host bb0d27cab5a5
+[2025-04-26T01:12:31.569+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='user_processing' AIRFLOW_CTX_TASK_ID='extract_user' AIRFLOW_CTX_EXECUTION_DATE='2025-04-26T01:12:14.208379+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-26T01:12:14.208379+00:00'
+[2025-04-26T01:12:31.570+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-04-26T01:12:31.587+0000] {http.py:175} INFO - Calling HTTP method
+[2025-04-26T01:12:31.599+0000] {base.py:84} INFO - Retrieving connection 'user_api'
+[2025-04-26T01:12:31.610+0000] {base.py:84} INFO - Retrieving connection 'user_api'
+[2025-04-26T01:12:41.990+0000] {http.py:236} INFO - {"results":[{"gender":"male","name":{"title":"Mr","first":"Kasper","last":"Rintala"},"location":{"street":{"number":2941,"name":"Tehtaankatu"},"city":"Nakkila","state":"Kainuu","country":"Finland","postcode":77483,"coordinates":{"latitude":"-23.3954","longitude":"-16.9032"},"timezone":{"offset":"-2:00","description":"Mid-Atlantic"}},"email":"kasper.rintala@example.com","login":{"uuid":"6c54e83b-0a44-4fa4-8c34-79e0db3a47f0","username":"bluefish538","password":"series","salt":"bQrr0NqF","md5":"d13d31055041a39a0f23ce30c9ca9438","sha1":"16775196ed70bad53a5e2daefc5db0609ab047f8","sha256":"54574123369f3bb8d69066f6f75594df7be800784895fefd5db3b56dd178b54a"},"dob":{"date":"1976-12-06T03:30:51.670Z","age":48},"registered":{"date":"2019-11-17T06:15:47.100Z","age":5},"phone":"08-726-349","cell":"040-966-27-33","id":{"name":"HETU","value":"NaNNA303undefined"},"picture":{"large":"https://randomuser.me/api/portraits/men/0.jpg","medium":"https://randomuser.me/api/portraits/med/men/0.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/men/0.jpg"},"nat":"FI"}],"info":{"seed":"cfb763d3ebb309c6","results":1,"page":1,"version":"1.4"}}
+[2025-04-26T01:12:42.021+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-04-26T01:12:42.023+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=user_processing, task_id=extract_user, run_id=manual__2025-04-26T01:12:14.208379+00:00, execution_date=20250426T011214, start_date=20250426T011231, end_date=20250426T011242
+[2025-04-26T01:12:42.080+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-26T01:12:42.115+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-04-26T01:12:42.122+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
