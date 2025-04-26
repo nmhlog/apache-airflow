@@ -2,9 +2,17 @@ from airflow import DAG
 from airflow.providers.common.sql.operators.sql import SQLExecuteQueryOperator
 from airflow.providers.http.sensors.http import HttpSensor
 from airflow.providers.http.operators.http import SimpleHttpOperator
+from airflow.operators.python import PythonOperator
 from datetime import datetime
 
 import json
+from pandas import json_normalize
+
+def _process_user(ti):
+    user = ti.xcom_pull(task_ids="extract_user")
+    user = user["results"][0]
+    
+    
 
 with DAG( 'user_processing', start_date = datetime(2025,4,22), schedule = '@daily',  catchup = False  ):
     # Corn parameter
@@ -35,4 +43,9 @@ with DAG( 'user_processing', start_date = datetime(2025,4,22), schedule = '@dail
         endpoint = 'api/',
         method = 'GET',
         response_filter = lambda response : json.loads(response.text)
+    )
+    
+    process_user = PythonOperator(
+            task_id  ='process_user',
+            python_callable=_process_user
     )
