@@ -1,0 +1,23 @@
+[2025-04-26T01:32:39.124+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-26T01:32:39.183+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: user_processing.extract_user manual__2025-04-26T01:32:17.206710+00:00 [queued]>
+[2025-04-26T01:32:39.216+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: user_processing.extract_user manual__2025-04-26T01:32:17.206710+00:00 [queued]>
+[2025-04-26T01:32:39.217+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2025-04-26T01:32:39.553+0000] {taskinstance.py:2890} INFO - Executing <Task(HttpOperator): extract_user> on 2025-04-26 01:32:17.206710+00:00
+[2025-04-26T01:32:39.582+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=2609) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-26T01:32:39.590+0000] {standard_task_runner.py:72} INFO - Started process 2611 to run task
+[2025-04-26T01:32:39.590+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'user_processing', 'extract_user', 'manual__2025-04-26T01:32:17.206710+00:00', '--job-id', '42', '--raw', '--subdir', 'DAGS_FOLDER/user_processing.py', '--cfg-path', '/tmp/tmp861pm1fs']
+[2025-04-26T01:32:39.598+0000] {standard_task_runner.py:105} INFO - Job 42: Subtask extract_user
+[2025-04-26T01:32:39.734+0000] {task_command.py:467} INFO - Running <TaskInstance: user_processing.extract_user manual__2025-04-26T01:32:17.206710+00:00 [running]> on host bb0d27cab5a5
+[2025-04-26T01:32:39.906+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='user_processing' AIRFLOW_CTX_TASK_ID='extract_user' AIRFLOW_CTX_EXECUTION_DATE='2025-04-26T01:32:17.206710+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-26T01:32:17.206710+00:00'
+[2025-04-26T01:32:39.910+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-04-26T01:32:39.939+0000] {http.py:175} INFO - Calling HTTP method
+[2025-04-26T01:32:39.960+0000] {base.py:84} INFO - Retrieving connection 'user_api'
+[2025-04-26T01:32:39.976+0000] {base.py:84} INFO - Retrieving connection 'user_api'
+[2025-04-26T01:32:51.685+0000] {http.py:236} INFO - {"results":[{"gender":"male","name":{"title":"Mr","first":"Dwayne","last":"Larson"},"location":{"street":{"number":4637,"name":"Fincher Rd"},"city":"Brisbane","state":"Northern Territory","country":"Australia","postcode":6457,"coordinates":{"latitude":"-85.8867","longitude":"-60.9063"},"timezone":{"offset":"-12:00","description":"Eniwetok, Kwajalein"}},"email":"dwayne.larson@example.com","login":{"uuid":"4807434a-b7db-457d-ae0b-ed47d5a20a83","username":"beautifulpeacock928","password":"terror","salt":"TB2RvC2j","md5":"420e63e208315710ff7fb4bfa0ed29e9","sha1":"ed77b1cf620bfc7cca6606e470e2ff94bbca5f2b","sha256":"d9291eb60e553416c32e23354eaf7d743e5bcf72c6854619a365a04c9df08f36"},"dob":{"date":"1991-03-31T11:36:40.151Z","age":34},"registered":{"date":"2008-05-26T18:37:19.806Z","age":16},"phone":"08-3610-6526","cell":"0405-229-488","id":{"name":"TFN","value":"228350177"},"picture":{"large":"https://randomuser.me/api/portraits/men/46.jpg","medium":"https://randomuser.me/api/portraits/med/men/46.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/men/46.jpg"},"nat":"AU"}],"info":{"seed":"8292bd02cf88e5aa","results":1,"page":1,"version":"1.4"}}
+[2025-04-26T01:32:51.747+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-04-26T01:32:51.748+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=user_processing, task_id=extract_user, run_id=manual__2025-04-26T01:32:17.206710+00:00, execution_date=20250426T013217, start_date=20250426T013239, end_date=20250426T013251
+[2025-04-26T01:32:51.815+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-26T01:32:51.858+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-04-26T01:32:51.861+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

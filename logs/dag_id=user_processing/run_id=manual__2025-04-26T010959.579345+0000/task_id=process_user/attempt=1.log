@@ -1,0 +1,106 @@
+[2025-04-26T01:10:29.253+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-26T01:10:29.277+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: user_processing.process_user manual__2025-04-26T01:09:59.579345+00:00 [queued]>
+[2025-04-26T01:10:29.291+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: user_processing.process_user manual__2025-04-26T01:09:59.579345+00:00 [queued]>
+[2025-04-26T01:10:29.292+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2025-04-26T01:10:29.491+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): process_user> on 2025-04-26 01:09:59.579345+00:00
+[2025-04-26T01:10:29.498+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=2279) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-26T01:10:29.501+0000] {standard_task_runner.py:72} INFO - Started process 2281 to run task
+[2025-04-26T01:10:29.500+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'user_processing', 'process_user', 'manual__2025-04-26T01:09:59.579345+00:00', '--job-id', '28', '--raw', '--subdir', 'DAGS_FOLDER/user_processing.py', '--cfg-path', '/tmp/tmpkorlke0q']
+[2025-04-26T01:10:29.505+0000] {standard_task_runner.py:105} INFO - Job 28: Subtask process_user
+[2025-04-26T01:10:29.562+0000] {task_command.py:467} INFO - Running <TaskInstance: user_processing.process_user manual__2025-04-26T01:09:59.579345+00:00 [running]> on host bb0d27cab5a5
+[2025-04-26T01:10:29.641+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='user_processing' AIRFLOW_CTX_TASK_ID='process_user' AIRFLOW_CTX_EXECUTION_DATE='2025-04-26T01:09:59.579345+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-26T01:09:59.579345+00:00'
+[2025-04-26T01:10:29.643+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-04-26T01:10:29.667+0000] {user_processing.py:17} INFO - XCom data: {'results': [{'gender': 'male', 'name': {'title': 'Mr', 'first': 'Mustafa', 'last': 'Bachmann'}, 'location': {'street': {'number': 3598, 'name': 'Schützenstraße'}, 'city': 'Heubach', 'state': 'Schleswig-Holstein', 'country': 'Germany', 'postcode': 35063, 'coordinates': {'latitude': '-49.9508', 'longitude': '-133.5922'}, 'timezone': {'offset': '+4:30', 'description': 'Kabul'}}, 'email': 'mustafa.bachmann@example.com', 'login': {'uuid': 'b0a5e6e4-7ce8-4a2b-9eff-6871f8d108dd', 'username': 'yellowwolf475', 'password': '***', 'salt': 'BW3INkRM', 'md5': '78c3bba9ae4275c922982fa29eade279', 'sha1': 'c6eb65e623ae0675a77b11b4028894453e12b2c7', 'sha256': 'e88147d63f583bfd33e06ddd866a9fbf091487d08cfab9143e449e541e7be5c8'}, 'dob': {'date': '1973-11-23T12:22:50.939Z', 'age': 51}, 'registered': {'date': '2011-10-24T12:53:26.193Z', 'age': 13}, 'phone': '0958-1058821', 'cell': '0175-8959535', 'id': {'name': 'SVNR', 'value': '12 231173 B 334'}, 'picture': {'large': 'https://randomuser.me/api/portraits/men/8.jpg', 'medium': 'https://randomuser.me/api/portraits/med/men/8.jpg', 'thumbnail': 'https://randomuser.me/api/portraits/thumb/men/8.jpg'}, 'nat': 'DE'}], 'info': {'seed': 'b70bc20926ef89a6', 'results': 1, 'page': 1, 'version': '1.4'}}
+[2025-04-26T01:10:29.670+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/user_processing.py", line 20, in _process_user
+    'firstname':user['name']['first'],
+                ~~~~^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+[2025-04-26T01:10:29.685+0000] {taskinstance.py:1226} INFO - Marking task as FAILED. dag_id=user_processing, task_id=process_user, run_id=manual__2025-04-26T01:09:59.579345+00:00, execution_date=20250426T010959, start_date=20250426T011029, end_date=20250426T011029
+[2025-04-26T01:10:29.713+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-04-26T01:10:29.714+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 28 for task process_user (list indices must be integers or slices, not str; 2281)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/user_processing.py", line 20, in _process_user
+    'firstname':user['name']['first'],
+                ~~~~^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+[2025-04-26T01:10:29.759+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-04-26T01:10:29.796+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-04-26T01:10:29.803+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
