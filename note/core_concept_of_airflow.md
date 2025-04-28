@@ -122,3 +122,24 @@ For example :
 - communities executor to run your tasks on a Kubernetes cluster, same thing on multiple machines in multiple pods.
 
 So as you can see, there are many different
+
+## Sequential Executor 
+- Run Task Sequentially
+- Its Extremely Simple and youu will use taht executable only for making experiment or debugging some issue
+- To configure this executor, you just need to modify the executor setting with the sequential executor value.
+
+## local executor
+The local executor is one step further than the sequential executor, as it allows you to execute multiple tasks at the same time.
+
+But on a single machine, it means that you end up with the same, for instance, but with a different database.
+
+It is as simple as defining the executable parameter with local executor and defining the SQL alchemy
+
+icon that contains the connection to your database.
+
+And here it is the connection that you will use to connect to Postgres.
+
+## Celery Executor
+Just keep in mind that you need to install the salary queue which may be redis or rabbit in queue For example.
+
+Because of this queue you need to define to additional configuration settings the server result back end and the salary broker URL.
