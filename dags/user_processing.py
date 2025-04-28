@@ -1,27 +1,12 @@
 from airflow import DAG
 from airflow.providers.common.sql.operators.sql import SQLExecuteQueryOperator
 from airflow.providers.http.sensors.http import HttpSensor
-<<<<<<< HEAD
-from airflow.providers.http.operators.http import SimpleHttpOperator
-from airflow.operators.python import PythonOperator
-=======
 from airflow.providers.http.operators.http import HttpOperator
->>>>>>> 62e4496af6b7080ee48daf5ce32e78bc561b6018
 from datetime import datetime
 from airflow.operators.python import PythonOperator
 from airflow.providers.postgres.hooks.postgres import PostgresHook
 import logging
 
-<<<<<<< HEAD
-import json
-from pandas import json_normalize
-
-def _process_user(ti):
-    user = ti.xcom_pull(task_ids="extract_user")
-    user = user["results"][0]
-    
-    
-=======
 
 from pandas import json_normalize
 import json 
@@ -45,7 +30,6 @@ def _store_user():
         sql="COPY users FROM stdin WITH DELIMITER AS ',' ",
         filename='/tmp/processed_user.csv'
     )
->>>>>>> 62e4496af6b7080ee48daf5ce32e78bc561b6018
 
 with DAG( 'user_processing', start_date = datetime(2025,4,22), schedule = '@daily',  catchup = False  ):
     # Corn parameter
@@ -71,20 +55,6 @@ with DAG( 'user_processing', start_date = datetime(2025,4,22), schedule = '@dail
         endpoint = "api/"
     )
     
-<<<<<<< HEAD
-    extract_user = SimpleHttpOperator(
-        task_id = 'extract_user',
-        http_conn_id = 'user_api',
-        endpoint = 'api/',
-        method = 'GET',
-        response_filter = lambda response : json.loads(response.text)
-    )
-    
-    process_user = PythonOperator(
-            task_id  ='process_user',
-            python_callable=_process_user
-    )
-=======
     extract_user = HttpOperator(
         task_id='extract_user',
         http_conn_id='user_api',
@@ -105,4 +75,3 @@ with DAG( 'user_processing', start_date = datetime(2025,4,22), schedule = '@dail
     )
 
 create_table >> is_api_available >>extract_user>>process_user>>store_user
->>>>>>> 62e4496af6b7080ee48daf5ce32e78bc561b6018

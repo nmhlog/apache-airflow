@@ -23,6 +23,6 @@ def _get_pictures():
 with DAG(
     dag_id = "download_rocket_launches",
     start_date = airflow.utils.dates.days_ago(14),
-    schedule_internal = None
+    schedule= '@daily'
 )  as dag : 
     None

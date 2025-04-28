@@ -95,3 +95,30 @@ A workflow is the entire process defined by your DAG, including all task and the
 ![basic-architecture](basic-architecture.png)
 - Data Engineer | Bulding and monitoring ETL processing | Airflow.cfg
 - 
+
+
+# Apache Airflow Dataset
+- What's a Dataset :
+well think of a data set a logical group of data, like file or like a SQL table, any thing
+- Data set has two properties and the first one is the URI (like the path to the data), Unique Identifier of your data. Must compose of only ASCII character.
+The URI schem cannot be airflow, case sensitive
+- Extra : Json dictionary
+- Dataset limitations
+Datasets are amazing, but they have limitations as well:
+    - DAGs can only use Datasets in the same Airflow instance. A DAG cannot wait for a Dataset defined in another Airflow instance.
+    - Consumer DAGs are triggered every time a task that updates datasets completes successfully. Airflow doesn't check whether the data has been effectively updated.
+    - You can't combine different schedules like datasets with cron expressions.
+    - If two tasks update the same dataset, as soon as one is done, that triggers the Consumer DAG immediately without waiting for the second task to complete.
+    - Airflow monitors datasets only within the context of DAGs and Tasks. If an external tool updates the actual data represented by a Dataset, Airflow has no way of knowing that.
+
+# The Executor 
+First thing first, that you need to know about it is that it doesn't run your tasks, it doesn't execute
+
+it defines how sistem run your task and basicall you have many different executors that you can use.
+For example :
+- local executor to run multiple task on a single machine.
+- Sequential Executor run on task a time on a single mechine
+- remote executors like the self executor to execute your tasks on the celery cluster on multiple machines.
+- communities executor to run your tasks on a Kubernetes cluster, same thing on multiple machines in multiple pods.
+
+So as you can see, there are many different
