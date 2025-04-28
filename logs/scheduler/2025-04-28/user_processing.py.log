@@ -1994,3 +1994,17 @@ SyntaxError: invalid decimal literal
 [2025-04-28T02:51:30.780+0000] {logging_mixin.py:190} INFO - [2025-04-28T02:51:30.780+0000] {dag.py:3239} INFO - Sync 1 DAGs
 [2025-04-28T02:51:30.809+0000] {logging_mixin.py:190} INFO - [2025-04-28T02:51:30.809+0000] {dag.py:4180} INFO - Setting next_dagrun for user_processing to 2025-04-27 00:00:00+00:00, run_after=2025-04-28 00:00:00+00:00
 [2025-04-28T02:51:30.836+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/user_processing.py took 0.752 seconds
+[2025-04-28T05:57:00.215+0000] {processor.py:186} INFO - Started process (PID=77) to work on /opt/airflow/dags/user_processing.py
+[2025-04-28T05:57:00.225+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/user_processing.py for tasks to queue
+[2025-04-28T05:57:00.237+0000] {logging_mixin.py:190} INFO - [2025-04-28T05:57:00.236+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/user_processing.py
+[2025-04-28T05:57:02.990+0000] {processor.py:925} INFO - DAG(s) 'user_processing' retrieved from /opt/airflow/dags/user_processing.py
+[2025-04-28T05:57:03.175+0000] {logging_mixin.py:190} INFO - [2025-04-28T05:57:03.174+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-28T05:57:03.269+0000] {logging_mixin.py:190} INFO - [2025-04-28T05:57:03.268+0000] {dag.py:4180} INFO - Setting next_dagrun for user_processing to 2025-04-27 00:00:00+00:00, run_after=2025-04-28 00:00:00+00:00
+[2025-04-28T05:57:03.337+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/user_processing.py took 3.162 seconds
+[2025-04-28T05:57:34.381+0000] {processor.py:186} INFO - Started process (PID=91) to work on /opt/airflow/dags/user_processing.py
+[2025-04-28T05:57:34.386+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/user_processing.py for tasks to queue
+[2025-04-28T05:57:34.395+0000] {logging_mixin.py:190} INFO - [2025-04-28T05:57:34.393+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/user_processing.py
+[2025-04-28T05:57:35.482+0000] {processor.py:925} INFO - DAG(s) 'user_processing' retrieved from /opt/airflow/dags/user_processing.py
+[2025-04-28T05:57:35.526+0000] {logging_mixin.py:190} INFO - [2025-04-28T05:57:35.525+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-28T05:57:35.553+0000] {logging_mixin.py:190} INFO - [2025-04-28T05:57:35.553+0000] {dag.py:4180} INFO - Setting next_dagrun for user_processing to 2025-04-27 00:00:00+00:00, run_after=2025-04-28 00:00:00+00:00
+[2025-04-28T05:57:35.586+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/user_processing.py took 1.233 seconds
